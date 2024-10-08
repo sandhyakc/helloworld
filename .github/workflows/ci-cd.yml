@@ -27,7 +27,4 @@ jobs:
       docker build . -t sandhyakc/helloworld:latest
       docker push sandhyakc/helloworld:latest
 
-       script: |
-        sudo docker pull sandhyakc/helloworld:latest
-        sudo docker compose -f /home/skc/helloworld/docker-compose.yml up -d
-      
+    
