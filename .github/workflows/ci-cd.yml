@@ -35,5 +35,5 @@ jobs:
        key: ${{ secrets.DEMO_EC2_SSH_KEY }}
        script: |
         sudo docker pull sandhyakc/helloworld:latest
-        sudo docker compose -f /app/hellowolrd/docker-compose.yml up -d
+        sudo docker compose -f /home/skc/helloworld/docker-compose.yml up -d
       
