@@ -35,5 +35,4 @@ jobs:
           key: ${{ secrets.DEMO_EC2_SSH_KEY }}
           script: |
             sudo docker pull sandhyakc/helloworld:latest
-            sudo docker compose -f /home/ubuntu/nodeappdeploy/deploy/docker-compose-db.yml up -d
             sudo docker compose -f /home/ubuntu/nodeappdeploy/deploy/docker-compose-node.yml up -d
