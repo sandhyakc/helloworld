@@ -27,13 +27,13 @@ jobs:
       docker build . -t sandhyakc/helloworld:latest
       docker push sandhyakc/helloworld:latest
 
-   - name: Deploy to ec2
-     uses: sandhyakc/ssh-action@v1.0.3
+   - name: Deploy to EC2
+     uses: appleboy/ssh-action@v1.0.3
      with:
-       host: ${{ secrets.DEMO_EC@_IP }}
-       username: ${{ secrets.DEMO_EC2_USER }}
-       key: ${{ secrets.DEMO_EC2_SSH_KEY }}
-       script: |
-        sudo docker pull sandhyakc/helloworld:latest
-        sudo docker compose -f /home/skc/helloworld/docker-compose.yml up -d
-      
+          host: ${{ secrets.DEMO_EC2_IP }}
+          username: ${{ secrets.DEMO_EC2_USER }}
+          key: ${{ secrets.DEMO_EC2_SSH_KEY }}
+          script: |
+            sudo docker pull sandhyakc/helloworld:latest
+            sudo docker compose -f /home/ubuntu/nodeappdeploy/deploy/docker-compose-db.yml up -d
+            sudo docker compose -f /home/ubuntu/nodeappdeploy/deploy/docker-compose-node.yml up -d
