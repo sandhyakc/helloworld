@@ -1,5 +1,6 @@
 require('dotenv').config();  // This must be at the very top
 
+// Import Express modules
 const express = require('express');
 const mysql = require('mysql2');
 const app = express();
@@ -22,6 +23,7 @@ connection.connect((err) => {
   }
 });
 
+// define a route for the root url
 app.get('/', (req, res) => {
   res.send('Bijaya Dashami 2081 Ko Hardik Mangalmaya Shuvakamana!');
 });
@@ -31,9 +33,6 @@ const username = process.env.USERNAME || 'Guest';
 
 console.log(`Username: ${username}`);  // This should log 'JohnDoe'
 
-app.get('/', (req, res) => {
-	res.send(`Hello ${username}`);
-});
 
 app.get('/name', (req, res) => {
   res.send(`My name is Sandhya KC !`);
