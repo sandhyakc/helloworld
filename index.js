@@ -23,7 +23,7 @@ connection.connect((err) => {
 });
 
 app.get('/', (req, res) => {
-  res.send('Hello, World!');
+  res.send('Bijaya Dashami 2081 Ko Hardik Mangalmaya Shuvakamana!');
 });
 
 const port = 3000;
